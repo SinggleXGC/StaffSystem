@@ -39,4 +39,7 @@ public interface EmpMapper {
                             @Param("endBeginDate") Date endBeginDate);
     //批量增加员工
     int addEmps(@Param("emps") List<Employee> emps);
+
+    //通过id获取员工
+    Employee getEmpById(Long Id);
 }

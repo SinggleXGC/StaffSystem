@@ -106,4 +106,8 @@ public class EmpService {
         return empMapper.addEmps(emps);
     }
 
+    public Employee getEmpById(Long id){
+        return empMapper.getEmpById(id);
+    }
+
 }
