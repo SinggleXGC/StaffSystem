@@ -42,4 +42,6 @@ public interface EmpMapper {
 
     //通过id获取员工
     Employee getEmpById(Long Id);
+
+    List<Employee> getEmployeeByPageShort(@Param("start") int start, @Param("size") Integer size);
 }
