@@ -129,4 +129,9 @@
         select * from adjustsalary;
     </select>
 
+    <select id="getAllEmpEc" resultType="com.shiyanlou.vhr.bean.EmpEc">
+        select * from employeeec;
+    </select>
+
+
 </mapper>

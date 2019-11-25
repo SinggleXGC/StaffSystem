@@ -40,5 +40,6 @@ public interface PersonnelMapper {
     List<EmpMove> getAllEmpMove();
     //更新员工的部门和职称
     int updateDepIdAndJobId(@Param("empMove") EmpMove empMove);
-
+    //获取所有员工奖惩的信息
+    List<EmpEc> getAllEmpEc();
 }

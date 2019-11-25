@@ -11,5 +11,5 @@ public class EmpEc {
     private Date ecDate;
     private String ecReason;
     private int ecType;
-    private String rmark;
+    private String remark;
 }

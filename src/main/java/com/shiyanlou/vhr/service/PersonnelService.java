@@ -73,4 +73,8 @@ public class PersonnelService {
         return personnelMapper.updateDepIdAndJobId(empMove);
     }
 
+    public List<EmpEc> getAllEmpEc(){
+        return personnelMapper.getAllEmpEc();
+    }
+
 }
