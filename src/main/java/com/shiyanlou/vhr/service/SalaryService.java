@@ -35,4 +35,20 @@ public class SalaryService {
         salaryMapper.deleteSalaryByEid(eid);
         return salaryMapper.addSidAndEid(sid,eid);
     }
+
+    public int getLeaveCount(Long eid){
+        return salaryMapper.getLeaveCount(eid);
+    }
+
+    public int getLateCount(Long eid){
+        return salaryMapper.getLateCount(eid);
+    }
+
+    public int getOvertime(Long eid){
+        return salaryMapper.getOvertime(eid);
+    }
+
+    public Salary getSalaryById(Long eid){
+        return salaryMapper.getSalaryById(eid);
+    }
 }

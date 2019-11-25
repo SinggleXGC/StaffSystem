@@ -20,5 +20,14 @@ public interface SalaryMapper {
     int deleteSalaryByEid(@Param("eid") Long eid);
     //增加工资账套id和员工id
     int addSidAndEid(@Param("sid") Integer sid, @Param("eid") Long eid);
+    //通过id获取工资
+    Salary getSalaryById(Long id);
+    //通过员工号获取请假次数
+    int getLeaveCount(Long eid);
+    //通过员工号获取迟到次数
+    int getLateCount(Long eid);
+    //通过员工号获取加班次数
+    int getOvertime(Long eid);
+
 
 }
