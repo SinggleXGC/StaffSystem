@@ -17,16 +17,15 @@ public class WsController {
     SimpMessagingTemplate messagingTemplate;
 
     @MessageMapping("/ws/chat")
-    public void handleChat(Principal principal,String msg){
-        String destUser = msg.substring(msg.lastIndexOf(";") + 1 , msg.length());
+    public void handleChat(Principal principal, String msg) {
+        String destUser = msg.substring(msg.lastIndexOf(";") + 1, msg.length());
         String message = msg.substring(0, msg.lastIndexOf(";"));
-        messagingTemplate.convertAndSendToUser(destUser,"/queue/chat", new ChatResp(message, principal.getName()));
+        messagingTemplate.convertAndSendToUser(destUser, "/queue/chat", new ChatResp(message, principal.getName()));
     }
 
     @MessageMapping("/ws/nf")
     @SendTo("/topic/nf")
-    public String handleNF(){
+    public String handleNF() {
         return "系统消息";
     }
-
 }

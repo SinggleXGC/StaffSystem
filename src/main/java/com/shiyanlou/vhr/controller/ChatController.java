@@ -23,22 +23,21 @@ public class ChatController {
     @Autowired
     SysMsgService sysMsgService;
 
-    @RequestMapping(value = "/hrs",method = RequestMethod.GET)
-    public List<Hr> getAllHr(){
+    @RequestMapping(value = "/hrs", method = RequestMethod.GET)
+    public List<Hr> getAllHr() {
         return hrService.getAllHrExceptAdmin();
     }
 
-    @RequestMapping(value = "/nf" , method = RequestMethod.POST)
+    @RequestMapping(value = "/nf", method = RequestMethod.POST)
     public RespBean sendNf(MsgContent msg) {
-        if (sysMsgService.sendMsg(msg)){
+        if (sysMsgService.sendMsg(msg)) {
             return RespBean.ok("发送成功!");
         }
         return RespBean.error("发送失败!");
     }
 
     @RequestMapping("/sysmsgs")
-    public List<SysMsg> getSysMsg(@RequestParam(value = "page", defaultValue = "1") Integer page,
-                                  @RequestParam(value = "size", defaultValue = "10") Integer size) {
+    public List<SysMsg> getSysMsg(@RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "size", defaultValue = "10") Integer size) {
         return sysMsgService.getSysMsgByPage(page, size);
     }
 
@@ -58,5 +57,4 @@ public class ChatController {
             }
         }
     }
-
 }
