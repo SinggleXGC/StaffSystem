@@ -66,5 +66,4 @@ public class HrService implements UserDetailsService {
     public List<Hr> getAllHr() {
         return hrMapper.getAllHr(null);
     }
-
 }
