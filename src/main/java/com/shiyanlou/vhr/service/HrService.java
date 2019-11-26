@@ -1,5 +1,6 @@
 package com.shiyanlou.vhr.service;
 
+import com.shiyanlou.vhr.common.HrUtils;
 import com.shiyanlou.vhr.mapper.HrMapper;
 import com.shiyanlou.vhr.bean.Hr;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +58,13 @@ public class HrService implements UserDetailsService {
 
     public int deleteHr(Long hrId) {
         return hrMapper.deleteHr(hrId);
+    }
+
+    public List<Hr> getAllHrExceptAdmin() {
+        return hrMapper.getAllHr(HrUtils.getCurrentHr().getId());
+    }
+    public List<Hr> getAllHr() {
+        return hrMapper.getAllHr(null);
     }
 
 }

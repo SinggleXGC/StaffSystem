@@ -28,4 +28,6 @@ public interface HrMapper {
 
     int hrReg(@Param("username") String username, @Param("password") String password);
 
+    //获取所有的 hr
+    List<Hr> getAllHr(@Param("currentId") Long currentId);
 }
